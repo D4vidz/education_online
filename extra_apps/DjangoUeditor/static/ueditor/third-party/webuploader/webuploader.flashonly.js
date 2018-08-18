@@ -298,11 +298,11 @@
              * @method inherits
              * @grammar Base.inherits( super ) => child
              * @grammar Base.inherits( super, protos ) => child
-             * @grammar Base.inherits( super, protos, statics ) => child
+             * @grammar Base.inherits( super, protos, static ) => child
              * @param  {Class} super 父类
              * @param  {Object | Function} [protos] 子类或者对象。如果对象中包含constructor，子类将是用此属性值。
              * @param  {Function} [protos.constructor] 子类构造器，不指定的话将创建个临时的直接执行父类构造器的方法。
-             * @param  {Object} [statics] 静态属性或方法。
+             * @param  {Object} [static] 静态属性或方法。
              * @return {Class} 返回子类。
              * @example
              * function Person() {
