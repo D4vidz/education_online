@@ -1,9 +1,17 @@
-# Python
-__pycache__/
-*.py[cod]
-venv/
+# Python:
 
-# Django
-*.log
+*.py[cod]
+*.so
+*.egg-info
+dist
+build
+
+# Windows：
+
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Pycharm:
+
 .idea/
-migrations/
