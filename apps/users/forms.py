@@ -18,7 +18,7 @@ class RegisterForm(forms.Form):
 
 class ForgetPwdForm(forms.Form):
     email = forms.EmailField(required=True)
-    code = forms.CharField(error_messages={'invalid': '验证码错误'})
+    captcha = CaptchaField(error_messages={'invalid': 'error code'})
 
 
 class ModifyPwdForm(forms.Form):

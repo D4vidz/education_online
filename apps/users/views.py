@@ -5,7 +5,7 @@ from django.contrib.auth import get_user_model
 from django.db.models import Q
 from django.views.generic.base import View
 from .forms import LoginForm, RegisterForm, ForgetPwdForm, ModifyPwdForm
-from .models import EmailVerifyRecord
+from users.models import EmailVerifyRecord
 from utils.email_send import send_register_email
 
 
@@ -92,15 +92,17 @@ class ActivateView(View):
 
 
 class ForgetPwdView(View):
+
     def get(self, request):
         forget_form = ForgetPwdForm()
         return render(request, 'users/forgetpwd.html', {'forget_form': forget_form})
 
     def post(self, request):
-        forget_form = ForgetPwdForm()
+        forget_form = ForgetPwdForm(request.POST)
         if forget_form.is_valid():
             email = forget_form.cleaned_data['email']
             send_register_email(email, 'forget')
+            return render(request, 'users/send_success.html')
         else:
             return render(request, 'users/forgetpwd.html', {'forget_form': forget_form})
 

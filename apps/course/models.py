@@ -1,4 +1,5 @@
 from django.db import models
+from organization.models import CourseOrg
 
 
 class Course(models.Model):
@@ -7,6 +8,7 @@ class Course(models.Model):
         ("zj", "中级"),
         ("gj", "高级")
     )
+    course_org = models.ForeignKey(CourseOrg, verbose_name="所属机构", null=True, blank=True)
     name = models.CharField(verbose_name="课程名", max_length=50)
     desc = models.CharField(verbose_name="课程描述", max_length=300)
     detail = models.TextField(verbose_name="课程详情")

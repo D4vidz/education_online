@@ -19,8 +19,7 @@
 <section class="headerwrap ">
     <header>
 		<div  class=" header">
- 		<div  class=" header">
-             <div class="top">
+            <div class="top">
                 {% if request.user.is_authenticated %}
                 <div class="personal">
                             <dl class="user fr">
@@ -49,8 +48,7 @@
                          <a style="color:white" class="fr loginbtn" href="{% url 'users:login' %}">登录</a>
                 </div>
                 {% endif %}
-            </div>
-
+             </div>
             <div class="middle">
                 <div class="wp">
                     <a href="index.html"><img class="fl" src="{% static 'images/logo.jpg' %}"/></a>
@@ -70,8 +68,6 @@
                     </div>
                 </div>
             </div>
-            
-            
 			<nav>
 				<div class="nav">
 					<div class="wp">
@@ -90,8 +86,6 @@
 					</div>
 				</div>
 			</nav>
-            
-			</div>
         </div>
     </header>
 </section>

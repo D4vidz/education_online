@@ -15,12 +15,19 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 # from django.contrib import admin
+from django.views.static import serve
+from education_online.settings import MEDIA_ROOT
 
 import xadmin
 
 urlpatterns = [
     url(r'^admin/', xadmin.site.urls),
     url(r'', include('users.urls', namespace='users')),
+    url(r'', include('organization.urls', namespace='organization')),
+    url(r'', include('operation.urls', namespace='operation')),
+    url(r'', include('course.urls', namespace='course')),
+
     url(r'^captcha/', include('captcha.urls')),
+    url(r'^media/(?P<path>.*)', serve, {"document_root": MEDIA_ROOT}),
 
 ]

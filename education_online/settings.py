@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'xadmin',
     'crispy_forms',
     'captcha',
+    'pure_pagination',
 ]
 
 MIDDLEWARE = [
@@ -73,6 +74,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # 添加图片处理器，为了在课程列表中前面加上MEDIA_URL
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -154,9 +157,12 @@ AUTHENTICATION_BACKENDS = (
     'users.views.CustomBackend',
 )
 
-EMAIL_HOST = "smtp.qq.com"  # SMTP服务器主机
+EMAIL_HOST = "smtp.163.com"  # SMTP服务器主机
 EMAIL_PORT = 25             # 端口
-EMAIL_HOST_USER = "zengzhiyuan1@qq.com"       # 邮箱地址
-EMAIL_HOST_PASSWORD = "lueqeivrzolicbda"    # 密码
+EMAIL_HOST_USER = "15779712170@163.com"       # 邮箱地址
+EMAIL_HOST_PASSWORD = "zzy19960306"    # 密码
 EMAIL_USE_TLS = True
-EMAIL_FROM = "zengzhiyuan1@qq.com"            # 邮箱地址
+EMAIL_FROM = "15779712170@163.com"            # 邮箱地址
+
+
+REGEX_MOBILE = "^1[358]\d{9}$|^147\d{8}$|176\d{8}$"
