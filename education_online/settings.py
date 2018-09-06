@@ -29,7 +29,7 @@ SECRET_KEY = '!&-ph6wn%!uthtvo!^6)@8#_9l#q14g@jpwdt8t2+b^4+weqv6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'organization',
     'operation',
     'xadmin',
+    'DjangoUeditor',
     'crispy_forms',
     'captcha',
     'pure_pagination',

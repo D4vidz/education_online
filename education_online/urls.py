@@ -29,5 +29,11 @@ urlpatterns = [
 
     url(r'^captcha/', include('captcha.urls')),
     url(r'^media/(?P<path>.*)', serve, {"document_root": MEDIA_ROOT}),
+    url(r'^ueditor/', include('DjangoUeditor.urls')),
 
 ]
+
+# 404
+handler404 = 'users.views.page_not_found'
+# 500
+handler500 = 'users.views.page_error'

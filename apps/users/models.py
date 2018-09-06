@@ -27,12 +27,13 @@ class UserProfile(AbstractUser):
 class EmailVerifyRecord(models.Model):
     send_choices = (
         ('register', '注册'),
-        ('forget', '找回密码')
+        ('forget', '找回密码'),
+        ('update_email', '修改邮箱')
     )
 
     code = models.CharField(verbose_name='验证码', max_length=20)
     email = models.EmailField(verbose_name='邮箱', max_length=50)
-    send_type = models.CharField(verbose_name='类型', choices=send_choices, max_length=10)
+    send_type = models.CharField(verbose_name='类型', choices=send_choices, max_length=30)
     c_time = models.DateTimeField(verbose_name='创建时间', auto_now_add=True)
 
     class Meta:
